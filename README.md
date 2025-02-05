@@ -21,5 +21,5 @@ CyberChat AI is a sleek, neon-themed chatbot interface built with HTML, Tailwind
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/cyberchat-ai.git
+   git clone https://github.com/Ashishjaiswal110/Free-AI-chat.git
    cd cyberchat-ai
