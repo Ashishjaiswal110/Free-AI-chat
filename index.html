@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberChat AI</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Axios for API Requests -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <!-- Showdown for Markdown Support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+
+    <style>
+        /* Background and font settings */
+        body {
+            background: #0a0a0a;
+            color: #00ffcc;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Neon glow effect */
+        .neon-border {
+            border: 2px solid #00ffcc;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        /* AI Avatar Animation */
+        .ai-avatar {
+            width: 50px;
+            height: 50px;
+            background: url('https://cdn.dribbble.com/users/398475/screenshots/5516474/__600x800.gif') no-repeat center;
+            background-size: cover;
+            border: 2px solid #00ffcc;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Chat bubbles */
+        .message {
+            padding: 12px;
+            border-radius: 10px;
+            max-width: 80%;
+            font-size: 14px;
+        }
+
+        .user-message {
+            background: #00ffcc;
+            color: black;
+            align-self: flex-end;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        .ai-message {
+            background: #092327;
+            border: 1px solid #00ffcc;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            font-style: italic;
+            animation: dots 1s infinite;
+        }
+
+        @keyframes dots {
+            0% { content: "Thinking"; }
+            33% { content: "Thinking."; }
+            66% { content: "Thinking.."; }
+            100% { content: "Thinking..."; }
+        }
+
+        /* Buttons */
+        .btn {
+            background: #00ffcc;
+            color: black;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #008080;
+            color: white;
+        }
+    
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-lg bg-black shadow-lg neon-border rounded-lg flex flex-col">
+        <!-- Header -->
+        <div class="flex items-center justify-between p-4 border-b border-gray-700">
+            <div class="ai-avatar rounded-full"></div>
+            <h1 class="text-xl font-bold text-green-400 flex-1 text-center">
+                <i class="fas fa-robot"></i> CyberChat AI
+            </h1>
+        </div>
+
+        <!-- Chat Box -->
+        <div id="chat-box" class="h-96 p-4 overflow-y-auto flex flex-col space-y-2 w-full max-w-lg"></div>
+
+        <!-- User Input & Actions -->
+        <div class="flex items-center border-t border-gray-700 p-3">
+            <input id="user-input" type="text" placeholder="Type a message..."
+                class="flex-1 px-4 py-2 bg-gray-900 text-white rounded-lg outline-none">
+            <button id="send-btn" class="ml-2 btn">
+                <i class="fas fa-paper-plane"></i> Send
+            </button>
+        </div>
+
+        <!-- Clear Chat Button -->
+        <button id="clear-chat-btn" class="m-3 btn">
+            <i class="fas fa-trash-alt"></i> Clear Chat
+        </button>
+        <button id="export-chat-btn" class="btn flex-1 m-3">
+                <i class="fas fa-download"></i> Export Chat
+            </button> 
+        
+    </div>
+
+    <script src="scripts/obfuscated.js"></script>
+
+</body>
+</html>
